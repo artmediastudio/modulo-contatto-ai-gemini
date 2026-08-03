@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Modulo Contatto AI - Report di Fattibilità con Gemini
+ * Plugin Name:       Modulo Contatto AI Gemini
  * Plugin URI:        https://github.com/artmediastudio/modulo-contatto-ai-gemini
  * Description:       Modulo di contatto che genera un report di fattibilità automatico con Google Gemini per ogni richiesta ricevuta, con limiti configurabili per restare sempre nel piano gratuito. Sviluppato da AI Agenti Intelligenti.
  * Version:           1.0.2

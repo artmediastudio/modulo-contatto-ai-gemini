@@ -1,8 +1,8 @@
-=== Modulo Contatto AI - Report di Fattibilità con Gemini ===
+=== Modulo Contatto AI Gemini ===
 Contributors: aiagentiintelligenti
 Tags: contact form, gemini, ai, lead generation, chatbot
 Requires at least: 6.0
-Tested up to: 6.8
+Tested up to: 7.0
 Requires PHP: 7.4
 Stable tag: 1.0.2
 License: GPLv2 or later
