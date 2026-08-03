@@ -1,0 +1,78 @@
+.mcag-form {
+	max-width: 640px;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.mcag-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin: 0;
+}
+.mcag-field label {
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+.mcag-field input,
+.mcag-field select,
+.mcag-field textarea {
+	padding: 0.6rem 0.75rem;
+	border: 1px solid #d0d5dd;
+	border-radius: 6px;
+	font-size: 1rem;
+	font-family: inherit;
+}
+.mcag-privacy label {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.5rem;
+	font-weight: 400;
+	font-size: 0.85rem;
+	line-height: 1.4;
+	cursor: pointer;
+}
+.mcag-privacy input {
+	margin-top: 0.15rem;
+	flex-shrink: 0;
+}
+.mcag-honeypot {
+	position: absolute !important;
+	left: -9999px !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+.mcag-submit {
+	align-self: flex-start;
+	padding: 0.7rem 1.5rem;
+	border: none;
+	border-radius: 6px;
+	background: #111827;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+}
+.mcag-submit:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+.mcag-result {
+	margin-top: 0.5rem;
+	padding: 1rem 1.25rem;
+	border-radius: 8px;
+	background: #f3f4f6;
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+.mcag-result h4 {
+	margin: 0 0 0.5rem;
+}
+.mcag-result ul {
+	margin: 0.4rem 0 0;
+	padding-left: 1.2rem;
+}
+.mcag-result.mcag-error {
+	background: #fef2f2;
+	color: #991b1b;
+}
