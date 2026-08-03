@@ -8,81 +8,81 @@ Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Modulo di contatto che genera automaticamente un report di fattibilità con Google Gemini per ogni richiesta, restando sempre nel piano gratuito grazie a due limiti configurabili.
+Contact form that generates an AI feasibility report with Google Gemini for every submission, staying safely within the free tier.
 
 == Description ==
 
-Ogni volta che un visitatore compila il modulo, il plugin:
+Every time a visitor submits the form, the plugin:
 
-1. Invia subito una email di notifica al tuo indirizzo (questo avviene sempre, anche se la parte AI è satura).
-2. Chiede a Google Gemini di analizzare la richiesta e generare un mini report: sintesi, categoria di servizio, complessità stimata, tempistiche, prossimi passi.
-3. Mostra il report direttamente al visitatore, subito dopo l'invio.
+1. Immediately sends a notification email to your address (this always happens, even if the AI part is temporarily paused).
+2. Asks Google Gemini to analyze the request and generate a short report: summary, service category, estimated complexity, timeline, next steps.
+3. Shows the report directly to the visitor right after submission.
 
-= Restare sempre nel piano gratuito =
+= Always staying on the free tier =
 
-Google offre un piano gratuito per i modelli Gemini "Flash", ma il numero esatto di richieste giornaliere concesse varia per account e cambia nel tempo — per questo il plugin non lo dà per scontato. Nelle impostazioni trovi due limiti indipendenti:
+Google offers a free tier for the "Flash" Gemini models, but the exact number of daily requests allowed varies per account and changes over time — so the plugin never assumes it. Two independent limits are available in the settings:
 
-* **Limite giornaliero totale**: un tetto massimo di richieste AI al giorno, valido per tutti i visitatori insieme. Si azzera ogni notte. Impostalo prudenzialmente sotto al tuo limite reale (controllabile su Google AI Studio → Rate Limits) e non pagherai mai nulla, qualunque cosa succeda.
-* **Limite per IP**: blocca un singolo visitatore (o bot) che invia troppe richieste di fila in pochi secondi.
+* **Total daily limit**: a maximum number of AI requests per day, shared across all visitors. It resets every night. Set it conservatively below your actual quota (check it on Google AI Studio → Rate Limits) and you will never be charged, whatever happens.
+* **Per-IP limit**: blocks a single visitor (or bot) sending too many requests in a few seconds.
 
-Se il limite giornaliero è esaurito, il modulo continua a funzionare normalmente come contatto (l'email arriva comunque) ma mostra un messaggio configurabile invece del report AI, fino al giorno dopo.
+If the daily limit is reached, the form keeps working normally as a regular contact form (the email still arrives) but shows a configurable message instead of the AI report, until the next day.
 
-Include anche un campo honeypot invisibile per scoraggiare i bot di spam, senza servizi esterni.
+It also includes an invisible honeypot field to discourage spam bots, with no external services.
 
-= Uso =
+= Usage =
 
-1. Attiva il plugin.
-2. Vai in Impostazioni → Modulo Contatto AI e inserisci la tua API key gratuita di Google Gemini (ottenibile su Google AI Studio).
-3. Personalizza categorie di servizio, email di notifica e i due limiti.
-4. Inserisci lo shortcode `[modulo_contatto_ai]` in qualsiasi pagina o articolo.
+1. Activate the plugin.
+2. Go to Settings → Modulo Contatto AI and enter your free Google Gemini API key (available on Google AI Studio).
+3. Customize service categories, notification email and the two limits.
+4. Add the `[modulo_contatto_ai]` shortcode to any page or post.
 
-Sviluppato da [AI Agenti Intelligenti](https://www.agentiintelligenti.it), consulenza strategica AI e sviluppo di agenti autonomi.
+Developed by [AI Agenti Intelligenti](https://www.agentiintelligenti.it), AI strategy consulting and autonomous agent development.
 
 == Installation ==
 
-1. Carica la cartella del plugin in `/wp-content/plugins/` oppure installalo dalla directory dei plugin di WordPress.
-2. Attiva il plugin dal menu Plugin di WordPress.
-3. Configura l'API key in Impostazioni → Modulo Contatto AI.
-4. Inserisci lo shortcode `[modulo_contatto_ai]` dove vuoi mostrare il modulo.
+1. Upload the plugin folder to `/wp-content/plugins/`, or install it from the WordPress plugin directory.
+2. Activate the plugin from the WordPress Plugins menu.
+3. Configure the API key under Settings → Modulo Contatto AI.
+4. Add the `[modulo_contatto_ai]` shortcode wherever you want the form to appear.
 
 == Frequently Asked Questions ==
 
-= Come ottengo l'API key di Gemini? =
+= How do I get a Gemini API key? =
 
-Gratuitamente su https://aistudio.google.com/apikey con un account Google.
+For free at https://aistudio.google.com/apikey with a Google account.
 
-= Come faccio a non pagare mai nulla? =
+= How do I make sure I never get charged? =
 
-Imposta il "Limite giornaliero totale" nelle impostazioni a un valore prudenzialmente sotto il tuo limite gratuito reale (verificabile su https://aistudio.google.com/rate-limit, cambia nel tempo e per account). Il plugin si ferma da solo al raggiungimento del tetto e riparte il giorno dopo: non può mai superare quel numero di chiamate, quindi non può mai generare costi se resti sotto il piano gratuito di Google.
+Set the "Total daily limit" in the settings to a value conservatively below your actual free quota (check it at https://aistudio.google.com/rate-limit, it changes over time and per account). The plugin stops itself once the cap is reached and resumes the next day: it can never exceed that number of calls, so it can never generate costs as long as you stay within Google's free tier.
 
-= Cosa succede se il limite giornaliero è raggiunto? =
+= What happens when the daily limit is reached? =
 
-Il modulo continua a funzionare come contatto normale: l'email di notifica arriva comunque, il visitatore vede un messaggio configurabile al posto del report AI.
+The form keeps working as a normal contact form: the notification email still arrives, and the visitor sees a configurable message instead of the AI report.
 
-= Serve un account a pagamento Google Cloud? =
+= Do I need a paid Google Cloud account? =
 
-No, il piano gratuito di Gemini non richiede carta di credito.
+No, the Gemini free tier does not require a credit card.
 
 == External services ==
 
-Questo plugin si collega all'API di Google Gemini (endpoint: https://generativelanguage.googleapis.com) per generare il report di fattibilità mostrato al visitatore dopo l'invio del modulo.
+This plugin connects to the Google Gemini API (endpoint: https://generativelanguage.googleapis.com) to generate the feasibility report shown to the visitor after the form is submitted.
 
-* **Quando**: solo quando un visitatore invia il modulo e il limite giornaliero configurato non è stato raggiunto.
-* **Quali dati vengono inviati**: il nome/azienda, il servizio selezionato e la descrizione del progetto inseriti dal visitatore nel modulo. L'indirizzo email NON viene inviato a Google.
-* **Autenticazione**: la tua API key personale di Google AI Studio, che configuri nelle impostazioni del plugin.
-* Se l'API key non è configurata o la richiesta fallisce, nessun dato viene elaborato da Gemini: il modulo funziona comunque come contatto normale e invia solo l'email di notifica.
+* **When**: only when a visitor submits the form and the configured daily limit has not been reached.
+* **What data is sent**: the name/company, the selected service and the project description entered by the visitor in the form. The email address is NOT sent to Google.
+* **Authentication**: your personal Google AI Studio API key, configured in the plugin settings.
+* If the API key is not configured or the request fails, no data is processed by Gemini: the form still works as a normal contact form and only sends the notification email.
 
-Termini di servizio di Google: https://policies.google.com/terms
-Termini dell'API Gemini: https://ai.google.dev/gemini-api/terms
-Privacy policy di Google: https://policies.google.com/privacy
+Google Terms of Service: https://policies.google.com/terms
+Gemini API Terms: https://ai.google.dev/gemini-api/terms
+Google Privacy Policy: https://policies.google.com/privacy
 
 == Changelog ==
 
 = 1.0.2 =
-* Nuovo: il JavaScript del modulo emette eventi pubblici (`mcag:submit`, `mcag:result`, `mcag:error`) per permettere a temi e pagine di mostrare caricamento e risultato in pannelli personalizzati.
+* New: the form's JavaScript now dispatches public events (`mcag:submit`, `mcag:result`, `mcag:error`) so themes and pages can show loading and result states in custom panels.
 
 = 1.0.1 =
-* Nuovo: checkbox obbligatoria di consenso al trattamento dei dati (GDPR), con validazione sia lato client che lato server.
+* New: mandatory data-processing consent checkbox (GDPR), validated both client-side and server-side.
 
 = 1.0.0 =
-* Rilascio iniziale: modulo di contatto, report AI Gemini, limite giornaliero globale, rate limit per IP, honeypot anti-spam.
+* Initial release: contact form, AI Gemini report, global daily limit, per-IP rate limit, anti-spam honeypot.

@@ -62,8 +62,8 @@ class MCAG_Shortcode {
 					<span>
 						<?php
 						printf(
-							/* translators: %s: URL dell'informativa privacy */
 							wp_kses(
+								/* translators: %s: URL dell'informativa privacy */
 								__( 'Ho letto l\'<a href="%s" target="_blank" rel="noopener noreferrer">informativa sulla privacy</a> e acconsento al trattamento dei miei dati per rispondere alla mia richiesta, inclusa l\'elaborazione tramite Google Gemini AI.', 'modulo-contatto-ai-gemini' ),
 								array( 'a' => array( 'href' => true, 'target' => true, 'rel' => true ) )
 							),

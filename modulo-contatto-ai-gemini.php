@@ -28,8 +28,6 @@ require_once MCAG_PLUGIN_DIR . 'includes/class-mcag-rest.php';
 require_once MCAG_PLUGIN_DIR . 'includes/class-mcag-shortcode.php';
 
 add_action( 'plugins_loaded', function () {
-	load_plugin_textdomain( 'modulo-contatto-ai-gemini', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-
 	new MCAG_Settings();
 	new MCAG_Rest();
 	new MCAG_Shortcode();
